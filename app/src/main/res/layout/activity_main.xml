@@ -14,12 +14,12 @@
     tools:context="com.example.hyein.myapplication.MainActivity">
 
 
-    <CheckBox
-        android:id="@+id/checkBox"
+    <Switch
+        android:text="start???"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:text="START" />
+        android:id="@+id/switch1"
+        android:layout_weight="0.05" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,48 +27,48 @@
         android:orientation="vertical"
         android:visibility="invisible"
         android:id="@+id/linear1"
-        android:weightSum="1"
-        android:layout_weight="0.43">
+
+        android:layout_weight="0.75">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="66dp"
+            android:layout_height="50dp"
             app:srcCompat="@drawable/cat"
+            android:layout_weight="1"
             android:id="@+id/imageView"
-            android:layout_weight="0.24" />
+            />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="0.12"
-            android:text="what is your favorite pet?" />
+            android:layout_height="15dp"
 
+            android:text="what is your favorite android version?" />
 
 
         <RadioGroup
-            android:id="@+id/animal"
+            android:id="@+id/os"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_weight="0.71">
+            android:layout_height="25dp"
+            android:layout_weight="3.49">
 
             <RadioButton
-                android:id="@+id/dog"
+                android:id="@+id/android"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="DOG" />
+                android:layout_height="wrap_content"
+                android:text="android" />
 
             <RadioButton
-                android:id="@+id/cat"
+                android:id="@+id/jellybean"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="CAT" />
+                android:layout_height="wrap_content"
+                android:text="jellybean" />
 
             <RadioButton
-                android:id="@+id/rabbit"
+                android:id="@+id/kit"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="RABBIT" />
+                android:text="kit" />
         </RadioGroup>
 
         <Button
@@ -76,7 +76,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="END"
-            android:layout_weight="0.12" />
+             />
+
+        <Button
+            android:text="exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/exit" />
+
+        <Button
+            android:text="first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/first"
+            />
 
     </LinearLayout>
 

@@ -10,15 +10,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    RadioGroup animal;
+    RadioGroup os;
     TextView textView;
-    RadioButton dog, cat, rabbit;
-    Button end;
+    RadioButton android,jellybean,kit;
+    Button end,first,exit;
     CheckBox checkBox;
+    Switch switch1;
     ImageView imageView;
     LinearLayout linear1;
 
@@ -27,35 +29,54 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        checkBox = (CheckBox) findViewById(R.id.checkBox);
-        animal = (RadioGroup) findViewById(R.id.animal);
+        switch1 = (Switch) findViewById(R.id.switch1) ;
+        //checkBox = (CheckBox) findViewById(R.id.checkBox);
+        os = (RadioGroup) findViewById(R.id.os);
         end = (Button) findViewById(R.id.end);
         imageView = (ImageView) findViewById(R.id.imageView);
         linear1 = (LinearLayout) findViewById(R.id.linear1);
+        first = (Button) findViewById(R.id.first);
+        exit = (Button) findViewById(R.id.exit);
+       // RadioButton = (RadioButton) findViewById(R.id.android);
 
 
-        checkBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    linear1.setVisibility(View.VISIBLE);
-                } else {
-                    linear1.setVisibility(View.INVISIBLE);
+
+        switch1.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener(){
+
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        linear1.setVisibility(View.VISIBLE);
+                    } else {
+                        linear1.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
+
 
         });
         end.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (animal.getCheckedRadioButtonId() == R.id.dog) {
-                    imageView.setImageResource(R.drawable.dog);
-                } else if (animal.getCheckedRadioButtonId() == R.id.cat) {
-                    imageView.setImageResource(R.drawable.cat);
+                if (os.getCheckedRadioButtonId() == R.id.android) {
+                    imageView.setImageResource(R.drawable.and);
+                } else if (os.getCheckedRadioButtonId() == R.id.jellybean) {
+                    imageView.setImageResource(R.drawable.jelly);
                 } else {
-                    imageView.setImageResource(R.drawable.rabbit);
+                    imageView.setImageResource(R.drawable.kit);
                 }
             }
         });
+        first.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                linear1.setVisibility(View.INVISIBLE);
+                switch1.setChecked(false);
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener(){
+            public  void onClick(View v){
+                finish();
+            }
+        });
+
+
     }
 }
 
